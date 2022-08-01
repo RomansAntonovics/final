@@ -13,6 +13,7 @@ html,
 body {
   height: 100%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 16px;
 }
 
 body {
@@ -82,6 +83,14 @@ p {
   overflow: hidden;
 }
 
+#logo {
+  padding: 10px;
+  margin-top: -15px;
+  flex-grow: 0;
+  width: 400px;
+  height: auto;
+}
+
 .container {
   max-width: 1180px;
   margin: 0px auto;
@@ -90,7 +99,6 @@ p {
 
 .header__body {
   position: relative;
-  z-index: 2;
   display: flex;
   justify-content: center;
   height: 50px;
@@ -108,8 +116,22 @@ p {
   max-width: 100px;
 }
 
+.header__burger {
+  display: none;
+}
+
+.header__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine;
+}
+
 .header__list {
   display: flex;
+  justify-content: center;
   color: rgb(0, 94, 24);
 }
 
@@ -125,6 +147,70 @@ p {
   text-decoration: none;
 }
 
+@media (max-width: 767px) {
+  .header__body {
+    height: 50px;
+  }
+  .grid-header {
+    height: 60px;
+  }
+  #logo {
+    position: relative;
+    top: -40px;
+    left: -12px;
+    height: 65px;
+  }
+  span {
+    position: absolute;
+    margin: 10px, 0px, 10px, 0px;
+  }
+  .header__burger {
+    display: block;
+    position: 0;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+  }
+  .header__burger span {
+    position: absolute;
+    background-color: rgb(0, 94, 24);
+    left: 0;
+    width: 15px;
+    height: 2px;
+    top: 21px;
+  }
+  .header__burger::before,
+.header__burger::after {
+    content: "";
+    background-color: rgb(0, 94, 24);
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    left: 0;
+  }
+  .header__burger::before {
+    top: 17px;
+  }
+  .header__burger::after {
+    bottom: 23px;
+  }
+  .header__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 70px 10px 20px 10px;
+  }
+  .header__list {
+    display: block;
+    z-index: 2;
+  }
+  .header__list li {
+    list-style: none;
+    margin: 0 0 20px 0;
+  }
+}
 .grid-header {
   position: fixed;
   top: 6px;
@@ -193,18 +279,18 @@ p {
   width: 50px;
 }
 
-/* finish form !!!*/
+/* finish form !!!
 .form-floating .mb-4 {
-  width: 10%;
-  height: 4%;
+    width: 10%;
+    height: 4%;
 }
 
 #floatingInput,
 #floatingPassword {
-  width: 100px;
-  height: 40px;
+    width: 100px;
+    height: 40px;
 }
-
+*/
 .grid-content {
   grid-area: content;
 }
@@ -217,12 +303,6 @@ footer {
   background-color: rgba(248, 176, 176, 0.26);
   color: rgb(10, 10, 10);
   text-align: center;
-}
-
-#logo {
-  padding: 10px;
-  margin-top: -15px;
-  flex-grow: 0;
 }
 
 /* #menu-container > div {background: rgb(241, 101, 41); border: 1px solid; width: 10%; margin: 0px; padding: 0px; }
