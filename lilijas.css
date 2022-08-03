@@ -126,7 +126,6 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: aquamarine;
 }
 
 .header__list {
@@ -148,6 +147,18 @@ p {
 }
 
 @media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
+  .text-content {
+    padding: 70px 0px 0px 0px;
+  }
+  .gallery-content {
+    padding: 70px 0px 0px 0px;
+  }
+  .grid-side {
+    display: none;
+  }
   .header__body {
     height: 50px;
   }
@@ -178,6 +189,7 @@ p {
     width: 15px;
     height: 2px;
     top: 21px;
+    transition: all 0.3s ease 0s;
   }
   .header__burger::before,
 .header__burger::after {
@@ -187,6 +199,7 @@ p {
     width: 15px;
     height: 2px;
     left: 0;
+    transition: all 0.3s ease 0s;
   }
   .header__burger::before {
     top: 17px;
@@ -194,21 +207,47 @@ p {
   .header__burger::after {
     bottom: 23px;
   }
+  .header__burger.active::before {
+    transform: rotate(45deg);
+    top: 21px;
+  }
+  .header__burger.active::after {
+    transform: rotate(-45deg);
+    bottom: 27px;
+  }
+  .header__burger.active span {
+    transform: scale(0);
+  }
+  .grid-side, .link-side {
+    overflow: auto;
+  }
   .header__menu {
     position: fixed;
-    top: 0;
+    top: -100%;
     left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 70px 10px 20px 10px;
+    width: 200px;
+    height: 350px;
+    overflow: auto;
+    padding: 60px 10px 20px 5px;
+    margin: 100px 0 20px 0;
+    transition: all 0.5s ease 0s;
+    background: rgb(144, 144, 144);
+    background: linear-gradient(90deg, rgba(144, 144, 144, 0) 0%, rgba(130, 130, 130, 0.9528186275) 14%, rgba(130, 130, 130, 0.7) 65%, rgba(85, 85, 85, 0) 100%);
+  }
+  .header__menu.active {
+    top: 0;
   }
   .header__list {
     display: block;
     z-index: 2;
+    background: rgb(82, 81, 81);
+    background: linear-gradient(90deg, rgba(82, 81, 81, 0) 0%, rgba(87, 86, 86, 0.7903536415) 2%, rgb(91, 90, 90) 4%, rgb(107, 107, 107) 19%, rgba(85, 85, 85, 0.0592612045) 100%);
   }
   .header__list li {
     list-style: none;
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
+    width: 60px;
+    font-size: 24px;
   }
 }
 .grid-header {
@@ -305,8 +344,12 @@ footer {
   text-align: center;
 }
 
-/* #menu-container > div {background: rgb(241, 101, 41); border: 1px solid; width: 10%; margin: 0px; padding: 0px; }
+/*
+самое главное в юзабилити: доступ к навигации
+при горизонтальном положении смартфона вылезает спрятанное на -100% меню
+
+ #menu-container > div {background: rgb(241, 101, 41); border: 1px solid; width: 10%; margin: 0px; padding: 0px; }
 #menu-container > div:nth-of-type(1) {margin: 5px; padding: 0; }
 
-https://ajpower.lv/wp-content/uploads/2020/04/ajlogo.svg
+
 *//*# sourceMappingURL=lilijas.css.map */
