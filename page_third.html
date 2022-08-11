@@ -1,20 +1,23 @@
 
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>Lilijas nams</title>
     <meta charset="utf-8">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
     <link rel="stylesheet" href="lilijas.css" />
     <link rel="stylesheet" href="icons.css" />
     <link rel="stylesheet" href="login_style.css" />
-   
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
         <script src="lilijas_script.js"></script>
+        
 
 
 </head>
@@ -66,16 +69,16 @@
     </div> 
 
     <div class="wrapper">
-        <div class="form">
+        <div class="form" >
             <form action="#" id="form" class="form__body">
                 <h1 class="form__title">Pastnieks</h1>
                 <div class="form__item">
                     <label for="formName" class="form__label">Vārds*</label>
-                    <input id="formName" type="text" name="name" class="form__input">
+                    <input id="formName" type="text" name="name" class="form__input _req">
                 </div>
                 <div class="form__item">
                     <label for="formMail" class="form__label">E-mail*</label>
-                    <input id="formEmail" type="text" name="email" class="form__input">
+                    <input id="formEmail" type="text" name="email" class="form__input _req _email">
 
                 </div>
                 <div class="form__item">
@@ -116,11 +119,11 @@
                 </div>
                 <div class="form__item">
                     <div class="checkbox">
-                        <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input">
+                        <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input _req">
                         <label for="formAgreement" class="checkbox__label">Piekrītu personas datu apstrādei</label>
                     </div>
                 </div>
-                <button type="submit" class="form__button" type>send</button>
+                <button type="submit" class="form__button">send</button>
             </form>
 
         

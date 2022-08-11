@@ -27,10 +27,17 @@ body {
     height: 100%;
     line-height: 1;
     font-size: 14px;
+    
     //background-color: rgba(51, 51, 51, 0.247);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.wrapper{
+    background: rgb(144, 144, 144);
+    background: linear-gradient(90deg, rgba(144, 144, 144, 0) 0%, rgba(9, 9, 9, 0.4374124649859944) 15%, rgba(9, 9, 9, 0.44) 85%, rgba(144, 144, 144, 0) 100%);
+
+
+}
 .form {
     max-width: 550px;
     margin: 0px auto;
@@ -38,11 +45,16 @@ body {
             /*0.247*/
         );
     padding: 30px 0;
+
 }
 
-.form *{
-   outline: none;
+.form * {
+    outline: none;
+    color: aliceblue;
+    
+
 }
+
 .form__body {}
 
 .form__title {
@@ -50,6 +62,7 @@ body {
     font-weight: 700;
     margin: 5px 10%;
     padding: 5px 20%;
+    
 
 }
 
@@ -71,8 +84,13 @@ body {
     font-size: 18px;
 }
 
-.form__input:focus{
+.form__input:focus {
     box-shadow: 0 0 15px #fff;
+    transition: all 0.3s ease 0s;
+}
+
+.form__input._error {
+    box-shadow: 0 0 15px red;
     transition: all 0.3s ease 0s;
 }
 
@@ -85,7 +103,7 @@ textarea {
 
 }
 
-textarea:focus{
+textarea:focus {
     box-shadow: 0 0 15px #fff;
     transition: all 0.3s ease 0s;
 }
@@ -155,7 +173,7 @@ textarea:focus{
     border-radius: 5px;
 }
 
-.select:focus{
+.select:focus {
     box-shadow: 0 0 15px #fff;
     transition: all 0.3s ease 0s;
 }
@@ -191,24 +209,26 @@ textarea:focus{
     padding: 0px 20px;
     box-shadow: -5px -5px 10px var(--clr-light), 5px 5px 10px var(--clr-dark);
     position: relative;
-    transition: background-color 0.3s ease 0s ;
+    transition: background-color 0.3s ease 0s;
     top: 0;
     cursor: pointer;
 }
 
-.file__button:hover{
+.file__button:hover {
     background-color: #dddddd98;
 }
 
-.file__button:active{
+.file__button:active {
     box-shadow: -2px -2px 10px var(--clr-light), 2px 2px 10px var(--clr-dark);
     top: 3px;
 }
+
 .file__preview {
     display: inline-block;
     max-width: 100px;
     padding: 10px 0px 0px 0px;
 }
+
 .file__preview img {
     max-width: 100%;
 }
@@ -220,9 +240,10 @@ textarea:focus{
 
 }
 
-.checkbox__input:checked + .checkbox__label::after{
+.checkbox__input:checked+.checkbox__label::after {
     transform: scale(1);
 }
+
 .checkbox__label {
     font-size: 16px;
     line-height: 140%;
@@ -230,10 +251,10 @@ textarea:focus{
     align-items: center;
     position: relative;
     cursor: pointer;
-    
+
 }
 
-.checkbox__label::before{
+.checkbox__label::before {
     content: "";
     align-self: flex-start; //квадратик вырaвнялся 
     flex: 0 0 24px;
@@ -241,29 +262,31 @@ textarea:focus{
     background-color: #fff;
     border-radius: 4px;
     margin-right: 10px;
-    
+
 }
-.checkbox__label::after{
-        content: "";
+
+.checkbox__label::after {
+    content: "";
     width: 16px;
     height: 16px;
-    position: absolute; 
+    position: absolute;
     background-color: chartreuse;
     top: 4px;
-    left:4px;
+    left: 4px;
     border-radius: 4px;
     transform: scale(0);
-    transition: all 0.5s ease 0s; 
-   
- }
+    transition: all 0.5s ease 0s;
 
-:root{
+}
+
+:root {
     --clr-light: white;
     --clr-med: #d7dfe2;
     --clr-dark: #90a4ae;
     --clr-dark-heavy: #546e7a;
 }
- .form__button {
+
+.form__button {
     width: 8em;
     height: 2em;
     font-size: 16px;
@@ -274,17 +297,16 @@ textarea:focus{
     box-shadow: -5px -5px 10px var(--clr-light), 5px 5px 10px var(--clr-dark);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: var(--clr-dark-heavy);
-    transition: background-color 0.3s ease 0s ;
+    transition: background-color 0.3s ease 0s;
     position: relative;
     top: 0;
 }
-.form__button:hover{
+
+.form__button:hover {
     background-color: #d5d7d8c2;
 }
 
-.form__button:active{
-top: 3px;
-box-shadow: -2px -2px 10px var(--clr-light), 2px 2px 10px var(--clr-dark);
+.form__button:active {
+    top: 3px;
+    box-shadow: -2px -2px 10px var(--clr-light), 2px 2px 10px var(--clr-dark);
 }
-
-
