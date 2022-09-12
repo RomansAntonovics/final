@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="lilijas.css" />
     <link rel="stylesheet" href="icons.css" />
     <link rel="stylesheet" href="login_style.css" />
-    
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
@@ -101,10 +101,10 @@
                 <div class="form_item">
                     <div class="form__label">Joma</div>
                     <select name="joma" class="select">
-                        <option value="Elektriba">Elektriba</option>
-                        <option value="Siltums">Siltums</option>
-                        <option value="Udens">Udens</option>
-                        <option value="Sadzive">Sadzive</option>
+                        <option value="Elektriba" class="select">Elektriba</option>
+                        <option value="Siltums" class="select">Siltums</option>
+                        <option value="Udens" class="select">Udens</option>
+                        <option value="Sadzive" class="select">Sadzive</option>
                     </select>
                 </div>
                 <div class="form__item">
@@ -114,7 +114,7 @@
                             <input id="formImage" accept=".jpg, .png, .gif, .bmp, .jpeg" type="file" name="image" class="file__input">
                             <div class="file__button">Izvelēties</div>
                         </div>
-                        <div class="file__preview"></div>
+                        <div id="formPreview" class="file__preview"></div>
                     </div>
                 </div>
                 <div class="form__item">

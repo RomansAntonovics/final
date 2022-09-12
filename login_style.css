@@ -69,6 +69,7 @@ body {
   border-radius: 5px;
   width: 100%;
   font-size: 18px;
+  color: black;
 }
 
 .form__input:focus {
@@ -115,6 +116,10 @@ textarea:focus {
   transform: scale(1);
 }
 
+.options__input {
+  color: black;
+}
+
 .options__label {
   position: relative;
   display: inline-flex;
@@ -152,6 +157,7 @@ textarea:focus {
   width: 180px;
   font-size: 18px;
   display: block;
+  color: black;
   margin: 0px 0px 10px 0px;
   border-radius: 5px;
 }
@@ -188,7 +194,6 @@ textarea:focus {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 0px 20px;
   box-shadow: -5px -5px 10px var(--clr-light), 5px 5px 10px var(--clr-dark);
-  position: relative;
   transition: background-color 0.3s ease 0s;
   top: 0;
   cursor: pointer;
@@ -211,6 +216,10 @@ textarea:focus {
 
 .file__preview img {
   max-width: 100%;
+}
+
+.checkbox ._error .checkbox__label::before {
+  box-shadow: 0 0 15px rgb(197, 31, 31);
 }
 
 .checkbox__input {
