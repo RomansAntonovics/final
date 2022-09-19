@@ -24,17 +24,23 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('image', formImage.files[0]); //добавляем в переменную изображение
 
         if (error === 0) { //при успешной валидации запускается ajax
+            form.classList.add('_sending');
+            
             let response = await fetch('sendmail.php', {
                 method: 'POST',
                 body: formData
 
             });
             if (response.ok) {
+                let result = await response.json();
+                alert(result.message);
+                formPreview.innerHTML = '';
+                form.reset();
 
             } else {
 
-            } // *******************************
-
+                alert('Kļūda!');
+            } 
 
         } else {
             alert('Lūdzu, aizpildiet obligātus laukus');
