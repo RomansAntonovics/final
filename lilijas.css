@@ -52,28 +52,6 @@ p {
   background: linear-gradient(90deg, rgba(144, 144, 144, 0) 0%, rgba(9, 9, 9, 0.437412465) 15%, rgba(9, 9, 9, 0.44) 85%, rgba(144, 144, 144, 0) 100%);
 }
 
-.gallery-content {
-  display: grid;
-  max-width: 1000px;
-  margin: auto;
-  padding: 0px 100px;
-  text-align: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: #e5e5e5;
-  background: rgb(144, 144, 144);
-  background: linear-gradient(90deg, rgba(144, 144, 144, 0) 0%, rgba(9, 9, 9, 0.437412465) 15%, rgba(9, 9, 9, 0.44) 85%, rgba(144, 144, 144, 0) 100%);
-  /*display: grid;
-  box-sizing: content-box;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: 40% 40%;
-  grid-template-rows: auto;*/
-}
-
-.img-col {
-  margin: 0 200px 0 200px;
-}
-
 .grid-header,
 .grid-side,
 .grid-content {
@@ -153,9 +131,6 @@ p {
   .text-content {
     padding: 70px 0px 0px 0px;
   }
-  .gallery-content {
-    padding: 70px 0px 0px 0px;
-  }
   .grid-side {
     display: none;
   }
@@ -218,7 +193,8 @@ p {
   .header__burger.active span {
     transform: scale(0);
   }
-  .grid-side, .link-side {
+  .grid-side,
+.link-side {
     overflow: auto;
   }
   .header__menu {
@@ -301,18 +277,79 @@ p {
   padding: 4%;
 }
 
-.gallery {
-  margin: 5px;
+.gallery__content {
+  display: grid;
+  grid-template: repeat(7, 1fr)/repeat(3, 1fr);
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background: rgb(144, 144, 144);
+  background: linear-gradient(90deg, rgba(144, 144, 144, 0) 0%, rgba(9, 9, 9, 0.437412465) 15%, rgba(9, 9, 9, 0.44) 85%, rgba(144, 144, 144, 0) 100%);
 }
-
-#gallery {
-  width: 400px;
-  padding: 20px;
+.gallery__content .gallery-content-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.gallery__content #gallery {
+  grid-template-columns: minmax(200px, 1fr);
+  width: 200px;
+  margin: auto;
+  padding: 5px;
   border-top-left-radius: 20%;
   border-bottom-right-radius: 30%;
   box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5);
 }
 
+.gallery-content {
+  display: grid;
+  grid-template: repeat(5, 1fr)/repeat(2, 1fr);
+  align-items: center;
+  margin-top: 200px;
+  max-width: 1000px;
+  padding: 0px 100px;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #e5e5e5;
+  background: rgb(144, 144, 144);
+  background: linear-gradient(90deg, rgba(144, 144, 144, 0) 0%, rgba(9, 9, 9, 0.437412465) 15%, rgba(9, 9, 9, 0.44) 85%, rgba(144, 144, 144, 0) 100%);
+  /*display: grid;
+  box-sizing: content-box;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 40% 40%;
+  grid-template-rows: auto;*/
+}
+
+.gallery {
+  margin: 5px;
+}
+
+@media (max-width: 350px) {
+  .gallery__content {
+    display: grid;
+    grid-template: repeat(20, 1fr)/repeat(1, 1fr);
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background: rgb(144, 144, 144);
+    background: linear-gradient(90deg, rgba(144, 144, 144, 0) 0%, rgba(9, 9, 9, 0.437412465) 15%, rgba(9, 9, 9, 0.44) 85%, rgba(144, 144, 144, 0) 100%);
+  }
+  .gallery__content .gallery-content-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .gallery__content #gallery {
+    grid-template-columns: minmax(200px, 1fr);
+    width: 200px;
+    margin: auto;
+    padding: 5px;
+    border-top-left-radius: 20%;
+    border-bottom-right-radius: 30%;
+    box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5);
+  }
+}
 .logo-svg #logo_balticom {
   width: 50px;
 }
@@ -351,4 +388,51 @@ footer {
 #menu-container > div:nth-of-type(1) {margin: 5px; padding: 0; }
 
 
-*//*# sourceMappingURL=lilijas.css.map */
+*/
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.404);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup.open .popup__content {
+  transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+  opacity: 1;
+}
+
+.popup__area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+  color: white;
+}
+
+.popup__content {
+  background-color: #fff;
+  color: #000;
+  max-width: 800px;
+  padding: 30px;
+}/*# sourceMappingURL=lilijas.css.map */
